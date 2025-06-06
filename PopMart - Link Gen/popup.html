@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>PopMart Settings</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      width: 240px;
+      padding: 12px;
+    }
+    h2 {
+      margin-top: 0;
+      font-size: 1.2em;
+    }
+    label {
+      display: block;
+      margin: 8px 0 4px;
+      font-size: 0.9em;
+    }
+    input[type="number"] {
+      width: 100%;
+      padding: 4px;
+      box-sizing: border-box;
+      font-size: 1em;
+    }
+    button {
+      margin-top: 12px;
+      width: 100%;
+      padding: 6px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    #status {
+      margin-top: 8px;
+      font-size: 0.85em;
+      color: green;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <h2>PopMart Link Generator</h2>
+  <form id="settingsForm">
+    <label for="increment">Increment value:</label>
+    <input id="increment" type="number" min="1" step="1" />
+
+    <label for="count">Number of links:</label>
+    <input id="count" type="number" min="1" step="1" />
+
+    <button type="submit">Save</button>
+    <div id="status">Settings saved!</div>
+  </form>
+  <script src="popup.js"></script>
+</body>
+</html>

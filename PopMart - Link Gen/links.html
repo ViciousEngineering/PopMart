@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <title>PopMart Generated Links</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      padding: 16px;
+    }
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 0.5em;
+    }
+    #linksList {
+      list-style-type: none;
+      padding-left: 0;
+    }
+    #linksList li {
+      margin-bottom: 0.4em;
+    }
+    #linksList a {
+      text-decoration: none;
+      color: #006AFF;
+      word-break: break-all;
+    }
+    #linksList a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <h1>Generated PopMart Links</h1>
+  <ul id="linksList">
+    <!-- JS will inject <li><a>...</a></li> here -->
+  </ul>
+
+  <!-- Load the helper script to fetch "lastLinks" from storage and render -->
+  <script src="links.js"></script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+{
+  "manifest_version": 2,
+  "name": "PopMart Link Generator",
+  "version": "1.1",
+  "description": "On any https://www.popmart.com/us/pop-now/set/* page, grab the 14-digit box number, increment digits 6–9 by your chosen value, output your chosen number of links, and open a new tab showing them.",
+  "permissions": [
+    "tabs",
+    "storage",
+    "https://www.popmart.com/*"
+  ],
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.popmart.com/us/pop-now/set/*"
+      ],
+      "js": ["content-script.js"]
+    }
+  ],
+  "browser_action": {
+    "default_title": "PopMart Link Generator Settings",
+    "default_popup": "popup.html"
+  }
+}
