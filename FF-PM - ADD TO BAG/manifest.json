@@ -1,0 +1,21 @@
+// manifest.json
+{
+  "manifest_version": 3,
+  "name": "CoCoLabs presents: The Click-O-Matic 5000 v1",
+  "version": "1.0",
+  "description": "Automatically clicks the “NOTIFY ME WHEN START” button on Pop Mart Pop-Now pages.",
+
+  "permissions": [
+    "activeTab"
+  ],
+  "host_permissions": [
+    "https://www.popmart.com/us/pop-now/set/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://www.popmart.com/us/pop-now/set/*"],
+      "js": ["content-script.js"],
+      "run_at": "document_idle"
+    }
+  ]
+}
