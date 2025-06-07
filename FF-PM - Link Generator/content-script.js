@@ -1,66 +1,77 @@
 // content-script.js
+console.log("ContentScript ▶︎ loaded on", location.href);
+
 ;(async () => {
-  // 1) Exit if URL has “-” after the set number
-  const pathMatch = location.pathname.match(/\/set\/([^/]+)/);
-  if (!pathMatch) return;
+  // 1) URL must be /{region}/pop-now/set/{setIdRaw} without a dash
+  const pm = location.pathname.match(/^\/([^/]+)\/pop-now\/set\/([^/]+)/);
+  if (!pm) return;
+  const [, region, setIdRaw] = pm;
+  if (setIdRaw.includes("-")) return;
 
-  const setId = pathMatch[1];
-  if (setId.includes("-")) return;
+  // 2) Helper to grab the 14-digit box number
+  const getBoxNumber = () => {
+    const el = document.querySelector("div.index_boxNumber__7k_Uf");
+    if (!el) return null;
+    const m = el.textContent.trim().match(/No\.?(\d{14})/);
+    return m && m[1];
+  };
 
-  // 2) Helper: read settings and generate / send links
+  // 3) Main work once we have the box number
   async function generateLinks(boxNumber) {
-    console.log("Content ▶︎ found box number →", boxNumber);
+    console.log("Content ▶︎ box # →", boxNumber);
 
-    // pull {increment, count} from storage (defaults to 1 and 50)
-    const { increment = 1, count = 50 } = await browser.storage.local.get({
-      increment: 1,
-      count: 50,
-    });
+    // read your settings (defaults: increment=1, count=50)
+    let { increment = 1, count = 50 } =
+      await browser.storage.local.get({ increment: 1, count: 50 });
+    increment = Math.max(1, Number(increment) || 1);
+    count     = Math.max(1, Number(count)     || 50);
 
-    const prefix = boxNumber.slice(0, 5);
-    const chunk  = boxNumber.slice(5, 9);
-    const suffix = boxNumber.slice(9);
+    // split into prefix / 5-digit chunk / suffix
+    const totalLen  = boxNumber.length; // 14
+    const chunkLen  = 5;
+    const suffixLen = 5;
+    const prefixLen = totalLen - chunkLen - suffixLen; // 4
 
-    let chunkNum = parseInt(chunk, 10);
-    if (isNaN(chunkNum)) {
-      console.warn("Content ▶︎ invalid chunk:", chunk);
+    const prefix = boxNumber.slice(0, prefixLen);
+    const chunk  = boxNumber.slice(prefixLen, prefixLen + chunkLen);
+    const suffix = boxNumber.slice(prefixLen + chunkLen);
+
+    let base = parseInt(chunk, 10);
+    if (isNaN(base)) {
+      console.warn("Content ▶︎ bad chunk:", chunk);
       return;
     }
 
+    // build links
     const links = [];
     for (let i = 1; i <= count; i++) {
-      const newChunkNum  = chunkNum + increment * i;
-      const newChunkStr  = String(newChunkNum).padStart(4, "0");
-      const newBoxNumber = prefix + newChunkStr + suffix;
-      links.push(`https://www.popmart.com/us/pop-now/set/${setId}-${newBoxNumber}`);
+      const next = base + increment * i;
+      const nextStr = String(next).padStart(chunkLen, "0");
+      const newBox = prefix + nextStr + suffix;
+      links.push(`https://www.popmart.com/${region}/pop-now/set/${setIdRaw}-${newBox}`);
     }
 
+    // send to background
     try {
       await browser.runtime.sendMessage({ type: "generateLinks", links });
-      console.log("Content ▶︎ sendMessage succeeded");
+      console.log("Content ▶︎ message sent.");
     } catch (err) {
       console.error("Content ▶︎ sendMessage failed:", err);
     }
   }
 
-  // 3) Try to extract box-number now (or wait via MutationObserver)
-  function extractOnce() {
-    const el = document.querySelector("div.index_boxNumber__7k_Uf");
-    if (!el) return false;
-
-    const match = el.textContent.trim().match(/No\.?(\d{14})/);
-    if (!match) {
-      console.log("Content ▶︎ no 14-digit number in:", el.textContent.trim());
-      return true; // stop observing if element exists but malformed
-    }
-    generateLinks(match[1]);
-    return true;
-  }
-
-  if (!extractOnce()) {
-    const observer = new MutationObserver((_, obs) => {
-      if (extractOnce()) obs.disconnect();
+  // 4) either run immediately or wait for async injection
+  let box = getBoxNumber();
+  if (box) {
+    generateLinks(box);
+  } else {
+    const obs = new MutationObserver((_, o) => {
+      box = getBoxNumber();
+      if (box) {
+        o.disconnect();
+        generateLinks(box);
+      }
     });
-    observer.observe(document.body, { childList: true, subtree: true });
+    obs.observe(document.body, { childList: true, subtree: true });
   }
 })();
