@@ -26,15 +26,16 @@ console.log("ContentScript ▶︎ loaded on", location.href);
     increment = Math.max(1, Number(increment) || 1);
     count     = Math.max(1, Number(count)     || 50);
 
-    // split into prefix / 5-digit chunk / suffix
-    const totalLen  = boxNumber.length; // 14
-    const chunkLen  = 5;
-    const suffixLen = 5;
-    const prefixLen = totalLen - chunkLen - suffixLen; // 4
+    // split into prefix
+	const totalLen  = boxNumber.length;   // still 14
+	const chunkLen  = 6;                  // ← now 6 digits
+	const suffixLen = 5;                  // keep the last 5 digits as-is
+	const prefixLen = totalLen - chunkLen - suffixLen; // 14 - 6 - 5 = 3
 
-    const prefix = boxNumber.slice(0, prefixLen);
-    const chunk  = boxNumber.slice(prefixLen, prefixLen + chunkLen);
-    const suffix = boxNumber.slice(prefixLen + chunkLen);
+const prefix = boxNumber.slice(0, prefixLen);                    // "100"
+const chunk  = boxNumber.slice(prefixLen, prefixLen + chunkLen); // "070343"
+const suffix = boxNumber.slice(prefixLen + chunkLen);            // "00280"
+
 
     let base = parseInt(chunk, 10);
     if (isNaN(base)) {
