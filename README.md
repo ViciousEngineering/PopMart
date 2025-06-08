@@ -37,8 +37,8 @@ I accidentally deleted the readme...womp womp I'm building it back slowly.
    https://www.popmart.com/us/pop-now/set/40-10006832400280  
    https://www.popmart.com/us/pop-now/set/50-10008817900350  
    https://www.popmart.com/us/pop-now/set/195-10002000000585
-
-* **Link Generator**
+  
+**Link Generator**
 
 Set the incriment & number of links to generate  
 https://github.com/user-attachments/assets/afd4a48b-dee3-4f69-a4f8-32c164dccbe0
