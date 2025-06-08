@@ -29,13 +29,12 @@ I accidentally deleted the readme...womp womp I'm building it back slowly.
 <ins>**How to Use**</ins>
 
   **Note:** Because of how PopMart webpages are loaded while navigating & my very limited knowledge on its coding, extensions only run when opening a new tab for the item or refreshing the page with a <ins>**Trigger link**</ins>.
-  These are Trigger Links:
-      * **Base trigger link examples**
-        https://www.popmart.com/us/pop-now/set/40
-        https://www.popmart.com/us/pop-now/set/50
-        https://www.popmart.com/us/pop-now/set/195
-        
-      * **Trigger link with set number examples**
-        https://www.popmart.com/us/pop-now/set/40-
-        https://www.popmart.com/us/pop-now/set/50-10008817900350
-        https://www.popmart.com/us/pop-now/set/195-
+  These are Trigger Links:  
+      * **Base trigger link examples**  
+        https://www.popmart.com/us/pop-now/set/40  
+        https://www.popmart.com/us/pop-now/set/50  
+        https://www.popmart.com/us/pop-now/set/195  
+      * **Trigger link with set number examples**  
+        https://www.popmart.com/us/pop-now/set/40-10006832400280  
+        https://www.popmart.com/us/pop-now/set/50-10008817900350  
+        https://www.popmart.com/us/pop-now/set/195-10002000000585
