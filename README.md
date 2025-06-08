@@ -1,13 +1,20 @@
-Updated the code for any region and fixed ID url issue.
+These are PC FireFox browser extensions for PopMart.  I'll try to provide as much support as possible.
+**I guarantee NOTHING! Spamming links will get you restricted on the popmart website!**
 
-Reach out to me in on reddit for issues and/or request, u/CoCoHimself
+Updated 06/08/2025 - coded for any region, fixed ID url issue & added link color change after clicking.
 
-I accidentally deleted the readme...womp womp i'll get it back up ASAP.
+Reach out to me on reddit for issues &/or request, u/CoCoHimself
+
+I accidentally deleted the readme...womp womp I'm building it back slowly.
+
+<ins>**Extensions**</ins>  
+* **Link Generator** - When you go to a Pop-Now item the extension grabs the box number & creates a new tab with links you can easily click.  You can set the number of links to gen & at what increment.
+
+* **ADD TO BAG** - Selects everything in the select multiple popup window & adds them to bag as fast as dang diddly possible.
 
 
 <ins>**To Add Extensions:**</ins>
-
-1. Click the **Green Code** button then **Download ZIP**
+1. To download: lick the **Green Code** button then **Download ZIP** (on this page)
 
 2. Extract the files
 
