@@ -24,3 +24,18 @@ I accidentally deleted the readme...womp womp I'm building it back slowly.
 5. Select the **content-script.js** from the folder of the extension you want to use.  You can use both.
 ![image](https://github.com/user-attachments/assets/f92b333b-e7c5-4618-a328-518dda18a82a)
 ![image](https://github.com/user-attachments/assets/dc8331b7-db27-46dd-9214-de92debe3f72)
+**Note:**  You will need to re-add them if you compltetly close FireFox
+
+<ins>**How to Use**</ins>
+
+  **Note:** Because of how PopMart webpages are loaded while navigating & my very limited knowledge on its coding, extensions only run when opening a new tab for the item or refreshing the page with a <ins>**Trigger link**</ins>.
+  These are Trigger Links:
+      * **Base trigger link examples**
+        https://www.popmart.com/us/pop-now/set/40
+        https://www.popmart.com/us/pop-now/set/50
+        https://www.popmart.com/us/pop-now/set/195
+        
+      * **Trigger link with set number examples**
+        https://www.popmart.com/us/pop-now/set/40-
+        https://www.popmart.com/us/pop-now/set/50-10008817900350
+        https://www.popmart.com/us/pop-now/set/195-
