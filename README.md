@@ -14,7 +14,7 @@ I accidentally deleted the readme...womp womp I'm building it back slowly.
 
 
 <ins>**To Add Extensions:**</ins>
-1. To download: lick the **Green Code** button then **Download ZIP** (on this page)
+1. To download: click the **Green Code** button then **Download ZIP** (on this page)
 
 2. Extract the files
 
