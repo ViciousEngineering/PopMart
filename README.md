@@ -38,11 +38,12 @@ I accidentally deleted the readme...womp womp I'm building it back slowly.
    https://www.popmart.com/us/pop-now/set/50-10008817900350  
    https://www.popmart.com/us/pop-now/set/195-10002000000585
   
-**Link Generator**
+**Link Generator**  
+ 1. Only works on Base Trigger links.  This is to prevent new link tabs being created everytime you click a Box Set link.  
 
-Set the incriment & number of links to generate [Clip](https://github.com/user-attachments/assets/afd4a48b-dee3-4f69-a4f8-32c164dccbe0).  
+ 2. Set the incriment & number of links to generate [Clip](https://github.com/user-attachments/assets/afd4a48b-dee3-4f69-a4f8-32c164dccbe0).  
 
-Open in new tab for link generation [Clip](https://github.com/user-attachments/assets/08115b93-eba1-478f-8fb4-9e2adb1725b1).
+ 3. Open in new tab for link generation [Clip](https://github.com/user-attachments/assets/08115b93-eba1-478f-8fb4-9e2adb1725b1).
 
 
 
