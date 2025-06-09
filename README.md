@@ -1,7 +1,7 @@
 These are PC FireFox browser extensions for PopMart.  I'll try to provide as much support as possible.
 **I guarantee NOTHING! Spamming links will get you restricted on the popmart website!**
 
-Updated 06/08/2025 #1- coded for any region, fixed ID url issue & added link color change after clicking.
+Updated 06/08/2025 #1- coded for any region, fixed ID url issue & added link color change after clicking.  
 Updated 06/08/2025 #2 - updated to open the generated link tab in the same window and next to the source of the box numnber
 
 Reach out to me on reddit for issues &/or request, u/CoCoHimself
