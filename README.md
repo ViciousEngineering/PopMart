@@ -44,7 +44,7 @@ I accidentally deleted the readme...womp womp I'm building it back slowly.
 
  2. Set the incriment & number of links to generate [Clip](https://github.com/user-attachments/assets/afd4a48b-dee3-4f69-a4f8-32c164dccbe0).  
 
- 3. Open in new tab for link generation [Clip](https://github.com/user-attachments/assets/08115b93-eba1-478f-8fb4-9e2adb1725b1).
+ 3. Open in new tab or refresh if already opened, for link generation [Clip](https://github.com/user-attachments/assets/08115b93-eba1-478f-8fb4-9e2adb1725b1).
 
 
 
